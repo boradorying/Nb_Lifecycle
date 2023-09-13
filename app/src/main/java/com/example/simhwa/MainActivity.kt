@@ -14,9 +14,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-      val toast =   showToast("뭘까~?",Toast.LENGTH_LONG)
 
-        Log.d("jun","${toast}")
+        val toast = findViewById<Button>(R.id.toastBtn)
+        toast.setOnClickListener {
+            showToast("hihi",Toast.LENGTH_LONG)
+        }
+
+
 
 
 

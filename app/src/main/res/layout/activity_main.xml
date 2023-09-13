@@ -32,12 +32,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="프래그먼트로 이동"
         android:background="#EFE1B6"
+        android:text="프래그먼트로 이동"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/removeFrag"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/toastBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#61C3CF"
+        android:text="토스트띄우기!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mainBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/mainBtn"
@@ -48,6 +60,7 @@
         android:text="두번째 액티비티로!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toastBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

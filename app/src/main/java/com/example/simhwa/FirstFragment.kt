@@ -6,21 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 
 class FirstFragment : Fragment() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("jun","fragment : onCreate")
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         Log.d("jun","fragment : onCreateView")
         val view = inflater.inflate(R.layout.fragment_first,container,false)
         return view
@@ -28,6 +28,15 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val saveBtn = view.findViewById<Button>(R.id.test)
+        saveBtn.setOnClickListener {
+
+            val state = Bundle()
+            state.putString("key","value")
+            onSaveInstanceState(state)
+
+        }
         Log.d("jun","fragment : onViewCreated")
     }
 
@@ -56,9 +65,9 @@ class FirstFragment : Fragment() {
         Log.d("jun","fragment : onStop")
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {//프래그먼트의 ㅅ ㅏㅇ태가 해당액티비와함께 소멸될때까지 기다리기
+    override fun onSaveInstanceState(outState: Bundle) {//프래그먼트 상태를 저장 이 메서드는 프래그먼트가 소멸될 때
         super.onSaveInstanceState(outState)
-        Log.d("jun","fragment : onSaveInstanceState")
+        Log.e("jun","fragment : onSaveInstanceState")
     }
 
     override fun onDestroyView() {
